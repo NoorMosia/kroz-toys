@@ -1,0 +1,26 @@
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/auth.css">
+    <link rel="stylesheet" href="/stylesheets/create-product.css">
+
+<%- include('../partials/nav.ejs') %>
+
+    <section class="section__form">
+        <h2 class="main-heading">add new</h2>
+
+        <form action="/products/<%= product._id %>" method="POST" class="form" enctype="multipart/form-data">
+            <input type="text" name="name" id="name" placeholder="NAME" value="<%= product.name %>">
+            <span class="label">name</span>
+            <input type="file" name="image" id="image">
+            <span class="label">image</span>
+            <input type="number" name="price" id="price" placeholder="PRICE" value="<%= product.price %>">
+            <span class="label">price</span>
+            <textarea name="details" id="details" placeholder="DETAILS"><%= product.details %></textarea>
+            <span class="label">details</span>
+            <button class="btn btn-blue btn-large form-btn">enter</button>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        </form>
+    </section>
+
+<%- include('../partials/footer.ejs') %>

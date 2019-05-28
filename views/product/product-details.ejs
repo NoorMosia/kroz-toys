@@ -1,0 +1,46 @@
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/details.css">
+
+<%- include('../partials/nav.ejs') %>
+
+    <div class="row">
+        <section class="section-details">
+            <h2 class="main-heading">
+                <%= product.name %>
+            </h2>
+        
+            <div class="img-container">
+                <img src="/<%= product.imageUrl %>" alt="Buzz" />
+            </div>
+        
+            <div class="text-side">
+                <div class="btn-container">
+                    <% if(user && user._id.toString() === product.user.toString()) { %>
+                        <a href="/products/<%=product._id%>/edit" class="btn btn-small btn-yellow">edit</a>
+                        <form action="/products/<%=product._id%>/delete" method="POST">
+                            <button class="btn btn-small btn-red">delete</button>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        </form>
+                    <% } else { %>
+                        <form action="/cart/<%=product._id%>" method="POST">
+                            <button class="btn btn-small btn-green"><i class="icon-ecommerce-cart-plus"></i>add</button>
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        </form>
+                    <% } %> 
+                </div>
+        
+                <div class="details">
+                    <%- product.details %>
+                </div>
+        
+                <div class="creator">
+                    created by <a href="/user/<%= product.user %>"> <span class="link link-blue">@<%= creator.name %></a></span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<%- include('../partials/footer.ejs') %>
+    

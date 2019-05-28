@@ -1,0 +1,172 @@
+/* --------------------------------------------------------------------------------- */
+/*                              SETTINGS                                             */
+/* --------------------------------------------------------------------------------- */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {    outline: none;     }
+
+html {
+    background-color: #fff;
+    color: rgb(20, 20, 20);
+    /* font-weight: 400; */
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    text-rendering: optimizeLegibility;
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------------- */
+/*                              LINKS                                                */
+/* --------------------------------------------------------------------------------- */
+a {    text-decoration: none;   color: inherit    }
+
+.link {    
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* SIZES */
+.link-small {
+    padding: .4rem 0;
+    font-size: 1.6rem;
+}
+
+.link-standard {    
+    color: rgb(19, 19, 19);
+    transition: border-bottom .1s;         
+}
+
+.link-standard:hover {
+    border-bottom: 1px solid red;
+}
+
+.link-blue:hover {
+    transition: .1s;
+    border-bottom: 1px solid rgb(4, 163, 255);
+}
+
+.link-blue {
+    color: rgb(0, 95, 150);
+    padding-bottom: .4rem;
+}
+
+/* --------------------------------------------------------------------------------- */
+/*                              BUTTONS                                              */
+/* --------------------------------------------------------------------------------- */
+.btn,
+button {
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    color: rgb(24, 24, 24);
+}
+
+/* SIZES */
+.btn-small {
+    text-align: center;
+    font-size: 1.4rem;
+    padding: .8rem 1.6rem;
+    margin: .8rem;
+    border-radius: 2px;
+    width: 12rem;
+    box-shadow: 2px 4px 5px rgb(199, 199, 199);
+    transition: box-shadow .2s;
+}
+.btn-small:hover  {    box-shadow: 3px 6px 5px rgb(199, 199, 199);   opacity: .96; }
+.btn-small:active {    box-shadow: 1px 2px 4px rgb(199, 199, 199);   opacity: 1;   }
+
+i {
+    width: 3.5rem;
+    margin-right: 1rem;
+}
+
+.btn-large {
+    font-size: 2.5rem;
+    padding: 1.2rem 2.4rem;
+    box-shadow: 2px 4px 5px rgb(199, 199, 199);
+    transition: box-shadow .2s;
+}
+.btn-large:hover  {    box-shadow: 3px 6px 5px rgb(199, 199, 199);   opacity: .96; }
+.btn-large:active {    box-shadow: 1px 2px 4px rgb(199, 199, 199);   opacity: 1;   }
+
+/* //colors */
+.btn-green  {    background-color: rgb(175, 255, 70);     }
+.btn-blue   {    background-color: rgb(70, 165, 255);     }
+.btn-red    {    background-color: rgb(255, 98, 70);      }
+.btn-yellow {    background-color: rgb(255, 243, 70);     }
+
+/* --------------------------------------------------------------------------------- */
+/*                              HEADINGS                                             */
+/* --------------------------------------------------------------------------------- */
+.flash {
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 2px;
+    text-transform: capitalize;
+}
+
+.error {
+    background-color: rgb(255, 194, 194);
+    color: red;
+}
+
+.success {
+    background-color: rgb(204, 255, 194);
+    color: green;
+}
+
+/* --------------------------------------------------------------------------------- */
+/*                              HEADINGS                                             */
+/* --------------------------------------------------------------------------------- */
+.main-heading {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+/* footer shandiz */
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {    padding-bottom: 5rem;       }
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+    text-align: center;
+    background-color: rgba(27, 27, 27, 0.849);
+    color: rgb(134, 134, 134);
+    padding: 2rem 2%;
+}
+
+@media only screen and (max-width: 1200px){
+    .row {    max-width: 96%;    }
+
+    .btn-small {
+        font-size: 1.3rem;
+        margin: .6rem;
+    }
+}
+

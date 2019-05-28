@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/auth.css">
+
+<%- include('../partials/nav.ejs') %>
+
+    <% if(errorMessage) { %>
+        <div class="flash error row">
+            <%= errorMessage %>
+        </div>
+    <% } %>
+
+    <section class="section__form">
+        <h2 class="main-heading">register</h2>
+
+        <form action="#" method="POST" class="form">
+            <input type="text" name="name" id="name" placeholder="NAME" value="<%=name%>">
+            <span class="label">name</span>
+            <input type="text" name="surname" id="surname" placeholder="SURNAME" value="<%=surname%>">
+            <span class="label">surname</span>
+            <input type="email" name="email" id="email" placeholder="EMAIL" value="<%=email%>">
+            <span class="label">e-mail</span>
+            <input type="password" name="password" id="password" placeholder="PASSWORD">
+            <span class="label">password</span>
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="CONFIRM PASSWORD">
+            <span class="label">confirm-password</span>
+            <button class="btn btn-blue btn-large form-btn">enter</button>
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        </form>
+    </section>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,57 @@
+<%- include('partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/cart.css">
+
+<%- include('partials/nav.ejs') %>
+    
+    <div class="row">
+        <h2 class="main-heading">cart</h2>
+        
+        <p class="total product-container row">
+            total: $ <%= cart.amount %>.00
+        </p>
+    </div>
+
+    <% cart.products.forEach(product => { %> 
+        <div class="product-container">
+        
+            <div class="image-container">
+                <img src="<%= product.productId.imageUrl %>" alt="">
+            </div>
+
+            <ul class="text">
+                <li class="name">Name: <%= product.productId.name %></li>
+                <li class="quantity">Quantity: 
+                    <form action="/cart/<%= product.productId._id %>/decrease" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button><i class="fas fa-minus"></i></button>
+                    </form>
+                     <%= product.quantity %> 
+                    <form action="/cart/<%= product.productId._id %>/add" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button><i class="fas fa-plus"></i></button>
+                    </form>
+                </li>
+                <li class="price">Price: $ <%= product.productId.price %>.00</li>
+
+                <form action="/cart/<%= product.productId._id %>/remove" method="POST">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button class="btn btn-blue btn-small form-btn"><i class="fas fa-times"></i><span>remove</span></button>
+                </form>
+            </ul>
+        </div>
+    <% }) %>
+
+    <div class="checkout">
+        <a href="/" class="btn btn-yellow btn-large "><i class="fas fa-arrow-left"></i><span>shop more</span></a>
+        <% if(cart.products.length > 0) { %>
+        <form action="/orders" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="hidden" name="cartId" value="<%= cart._id %>">
+            <button class="btn btn-green btn-large form-btn"><i class="fas fa-check"></i><span>checkout</span></button>
+        </form>
+        <% } %>
+    </div>
+    
+<%- include('partials/footer.ejs') %>

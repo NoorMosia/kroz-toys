@@ -1,0 +1,36 @@
+.section-users {
+    padding-top: 4rem;
+}
+
+.user-container {
+    background-color: rgb(255, 215, 215);
+    padding: 2rem;
+    width: 60%;
+    margin: 4rem auto;
+    box-shadow: 2px 4px 4px rgb(255, 120, 120);
+}
+
+.user-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.img-container {
+    float: left;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+.username,
+.email {
+    display: inline-block;
+    font-size: 3rem;
+    margin: 1rem 3rem;
+}

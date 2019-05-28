@@ -1,0 +1,77 @@
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/user.css">
+
+<%- include('../partials/nav.ejs') %>
+
+    <section class="section-user">
+        <% if(message && message != '') { %>
+            <div class="flash success row">
+                <%= message %>
+            </div>
+        <% } %>
+        <div class="head row">
+
+            <a href="/user/<%= user._id %>/edit-pic">
+                <div class="img-container">
+                    <img src="/<%= user.imageUrl%>" alt="user profile pic">
+                </div>
+            </a>
+            
+            <div class="text-side user-text">
+                <div class="name">
+                    <%= user.name %>
+                </div>
+                <div class="name">
+                    <%= user.surname %>
+                </div>
+                <div class="product-Count">
+                    Products: <%= user.products.length %> 
+                </div>
+
+                <% if(isAuthenticated) { %>
+                    <a href="/products/new" class="add-toy">
+                        <i class="fas fa-plus-circle"></i>
+                        add toy
+                    </a>
+                    <a href="/orders" class="add-toy">
+                        <i class="icon-ecommerce-receipt i-details"></i>
+                        orders
+                    </a>
+                <% } %>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-products">
+        <div class="row">
+            <h2 class="main-heading">products</h2>
+        
+            <% user.products.forEach(product => { %>
+        
+            <div class="product-container">
+        
+                <div class="prod-img-container">
+                    <img src="/<%= product.imageUrl %>" alt="">
+                </div>
+        
+                <div class="text-side">
+                    <div class="name">
+                        <%= product.name %>
+                    </div>
+                    <div class="price">$
+                        <%= product.price %>.00 </div>
+                    <a href="/products/<%= product._id %>" class="btn btn-small btn-blue">
+                        <i class="icon-ecommerce-receipt i-details"></i>
+                        details
+                    </a>
+                </div>
+            </div>
+        
+            <% }) %>
+        </div>
+    </section>
+    
+<%- include('../partials/footer.ejs') %>

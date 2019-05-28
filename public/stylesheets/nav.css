@@ -1,0 +1,122 @@
+nav {
+    font-size: 2rem;
+    padding: 1.5rem;
+    background-color: rgb(255, 131, 131);
+    height: 7rem;
+}
+
+nav::after {
+    content: "";
+    clear: both;
+    display: block
+}
+
+.home {
+    text-transform: uppercase;
+    color: rgb(20, 20, 20);
+    float: left;
+    margin-top: -.8rem;
+    color: rgb(88, 32, 0);
+}
+
+.home .fas {
+    color: rgb(88, 32, 0);
+}
+
+.home span {
+    font-size: 13px;
+    margin-top: -.7rem;
+    display: block;
+}
+
+.icon {
+    font-size: 4rem;
+}
+
+.add {
+    text-transform: uppercase;
+    color: rgb(20, 20, 20);
+    float: left;
+    margin-left: 5rem;
+    margin-top: .6rem;
+}
+
+.nav-list {
+    float: right;
+    position: relative;
+}
+
+.nav-item {
+    display: inline-block;
+    margin: 0 2rem;
+}
+
+.nav-item:last-child {
+    margin-right: 1;
+}
+
+.link.sp {
+    position: absolute;
+    top: 1rem;
+    left: -8rem;
+    background-color: transparent;
+}
+
+.nav-item.unAuth {
+    margin-top: .8rem;
+}
+
+.prof {
+    display: inline-block;
+    margin-top: -.3rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0;
+    cursor: pointer;
+}
+
+.prof img {
+    width: 100%;
+    transform: scale(1.08);
+}
+
+form {
+    display: inline-block;
+}
+
+i.fas {
+    margin-right: -1rem;
+    padding: 0;
+    color: rgb(34, 34, 34)
+}
+
+.fas.fa-plus-circle {
+    margin-right: -2rem;
+}
+
+.cart .link-small {
+    float: left;
+    margin-left: 8rem;
+    margin-top: -.3rem;
+    font-size: 3rem;
+}
+
+@media only screen and (max-width: 550px){
+    .home {
+        font-size: 1.5rem;
+        margin-right: -1rem;
+    }
+
+    .add {
+        font-size: 1.5rem;
+        margin-left: 3rem;
+        margin-top: .3rem;
+    }
+
+    .nav-item.unAuth {
+        margin-top: .2rem;
+        margin-right: .2rem;
+    }
+}

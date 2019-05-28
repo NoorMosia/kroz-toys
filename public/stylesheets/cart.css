@@ -1,0 +1,114 @@
+h2 {
+    margin-top: 2rem;
+}
+
+
+.total {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.text {
+    float: left;
+    list-style: none;
+}
+
+
+.product-container {
+    width: 70rem;
+    padding: 1.5rem;
+    margin: 3rem auto;
+    box-shadow: 1px 2px 3px rgb(255, 152, 152);
+}
+
+.product-container::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.text li {
+    width: 100%;
+    text-align: left;
+    font-size: 1.6rem;
+    margin: 1rem;
+}
+
+.image-container {
+    width: 8rem;
+    height: 12rem;
+    float: left;
+    margin-right: 6rem;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.quantity form {
+    margin: -2rem 2rem;
+    width: 2rem;
+    height: 2rem;
+    transform: translateY(-40%);
+    display: inline-block;
+    font-size: 1rem;
+    color: #fff;
+    padding: -.5rem;
+    border-radius: 50%;
+    text-align: center;
+    background-color: rgb(255, 126, 126);
+    box-shadow: 2px 3px 4px rgb(255, 181, 181);
+    position: relative;
+    transition: box-shadow .2s;
+}
+
+.quantity form:hover {
+    box-shadow: 4px 3px 8px rgb(255, 130, 130);
+}
+
+.quantity form i {
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+}
+
+.fa-times {
+    margin: 0 -1.5rem;
+}
+
+.checkout {
+    margin: 5rem;
+    text-align: center;
+}
+
+.btn {
+    font-size: 1.4rem;
+}
+
+.btn-large i {
+    margin-right: .1rem;
+}
+.btn-large:first-child {
+    margin-right: 5rem;
+}
+
+@media only screen and (max-width: 730px){
+    .row,
+    .product-container {
+        width: 96%;
+    }
+
+    .image-container {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 490px){
+    .checkout .btn {
+        display: block;
+        margin: 2rem auto;
+        width: 20rem;
+    }
+}

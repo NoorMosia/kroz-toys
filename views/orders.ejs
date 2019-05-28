@@ -1,0 +1,20 @@
+<%- include('partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/orders.css">
+
+<%- include('partials/nav.ejs') %>
+
+    <div class="row">
+        <h2 class="main-heading">orders</h2>
+
+        <% for(let index = allOrders.length - 1; index >= 0; index--) { %>
+            <div class="order-container">
+                <div class="price">Paid $<%= allOrders[index].amount %> For <%= allOrders[index].products.length %> products
+                    <span class="date"><%= allOrders[index].createdAt %></span>
+                </div>
+            </div>
+        <% } %>
+    </div>
+
+<% include partials/footer.ejs %>

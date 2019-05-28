@@ -1,0 +1,28 @@
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/users.css">
+
+<%- include('../partials/nav.ejs') %>
+
+    <section class="section-users row">
+        <% users.forEach(user => { %>
+            <a href="/user/<%=user._id%>" class="link">
+                <div class="user-container">
+                    <div class="img-container">
+                        <img src="<%= user.imageUrl %>" alt="me" />
+                    </div>
+                    <div class="text">
+                        <div class="username">
+                            <%= user.name %>
+                        </div>
+                        <div class="email">
+                            <%= user.surname %>
+                        </div>
+                    </div>  
+                </div>
+            </a>
+        <% }) %>  
+    </section>
+
+<%- include('../partials/footer.ejs') %>

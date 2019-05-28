@@ -1,0 +1,71 @@
+.section__form {
+    width: 50rem;
+    padding: 2rem;
+    margin: 2rem auto;
+    background-color: rgb(255, 238, 238);
+    box-shadow: 2px 4px 5px rgb(245, 228, 228);
+}
+
+form input,
+form textarea {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 2rem;
+    border-radius: 5px;
+    border: 1px solid rgb(233, 233, 233);
+    background-color: rgb(255, 255, 255);
+}
+
+.label {
+    transition: opacity .3s linear;
+}
+
+input:placeholder-shown + .label,
+textarea:placeholder-shown + .label {
+    opacity: 0;
+    -webkit-transform: translate(200px);
+    transform: translate(200px);
+}
+
+form .label {
+    margin-left: 7%;
+    font-size: 1.2rem;
+    color: rgb(139, 3, 3);
+    text-transform: capitalize;
+}
+
+*::placeholder {
+    color: rgb(129, 129, 129);
+}
+
+button.form-btn {
+    text-align: center;
+    width: 70%;
+    margin: 15%;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    border-radius: 200px;
+    border: 0;
+    box-shadow: 2px 2px 4px rgb(182, 181, 181);
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 560px){
+    .section__form {
+        width: 96%;
+        padding: 2rem .8rem;
+    }
+
+    form input,
+    form textarea {
+        width: 98%;
+        margin-left: 1%;
+    }
+}

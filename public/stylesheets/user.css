@@ -1,0 +1,168 @@
+.head {
+    height: 24rem;
+    padding: 2rem;
+}
+.section-user {
+    padding: 2rem;
+    background-image: linear-gradient( rgb(255, 140, 140), rgb(255, 215, 215) ) ;
+    box-shadow: 2px 4px 5px rgb(255, 176, 176);
+}
+
+.img-container {
+    width: 18rem;
+    height:18rem;
+    overflow: hidden;
+    float: left;
+    border-radius: 50%;
+}
+
+img {
+    width: 100%;
+    transform: scale(1.08);
+}
+
+.text-side {
+    padding: 2rem;
+    float: left;
+    font-size: 2rem;
+}
+
+.user-text {
+    padding: 3rem;
+    text-transform: capitalize;
+}
+
+.add-toy {
+    display: block;
+    text-transform: uppercase;
+    color: rgb(44, 44, 44);
+    margin: 1.5rem 1rem 0 0;
+    font-size: 1.4rem;
+}
+
+.add-toy i.fas {
+    display: inline-block;
+    padding-right: 4.5rem;
+}
+
+.name {
+    display: inline-block;
+}
+
+.price {
+    margin-top: 1rem;
+}
+
+.text-side .btn {
+    display: block;
+    margin: 0;
+    margin-top: 2rem;
+    margin-right: 2rem;
+    float: left;
+}
+
+.product-Count {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.section-products {
+    padding: 3rem;
+    box-shadow: 8px 4px 12px rgb(255, 0, 0);
+    background-color: rgb(255, 215, 215);
+}
+
+.section-products::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.product-container {
+    width: 46%;
+    height: 20rem;
+    float:left;
+    margin: 2rem 2%;
+    padding: 1rem;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 2px 4px rgb(255, 103, 103);
+    border-radius: 3px;
+    text-transform: capitalize;
+}
+
+.product-container::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.prod-img-container {
+    width: 17rem;
+    overflow: hidden;
+    float: left;
+}
+
+@media only screen and (max-width: 1200px){
+    .section-products {
+        padding: 4%;
+    }
+    
+    .product-container {
+        float: none;
+        margin: 2rem auto;
+        width: 60rem
+    }
+}
+
+@media only screen and (max-width: 970px){
+    .section-user {
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .product-container {
+        width: 92%;
+    }
+}
+
+
+@media only screen and (max-width: 635px) {
+    .btn.btn-small,
+    form button.btn.btn-small {
+        display: block;
+        float: none;
+    }
+
+    .product-container {
+        width: 98%;
+    }
+
+    .head {
+        padding: 0;
+        height: 18rem;;
+    }
+
+    .text-side {
+        padding-top: .4rem;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .product-container {
+        height: 15rem;
+    }
+
+    .img-container {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .user-text {
+        padding-top: .5rem;;
+    }
+
+    .prod-img-container {
+        width: 10rem;
+    }
+}

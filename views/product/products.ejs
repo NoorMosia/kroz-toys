@@ -1,0 +1,98 @@
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/products.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    
+<%- include('../partials/nav.ejs') %>
+
+    <% if(message && message != '') { %>
+        <div class="flash success row">
+            <%= message %>
+        </div>
+    <% } %>
+
+    <section class="section--products">
+        <div class="row">
+            <div class="pruducts-container">
+
+                <% product.forEach(product => { %>
+                    <div class="product">
+                        <div class="img-container">
+                            <img src="<%= product.imageUrl %>" alt="product.name" />
+                        </div>
+
+                        <div class="price-name-container">
+                            <div class="name">
+                                <%= product.name %>
+                            </div>
+                            
+                            <div class="price">$
+                                <%= product.price %>.00
+                            </div>
+                        </div>
+                        
+                        <div class="purchase-buttons">
+                            <a href="/products/<%= product._id %>" class="btn btn-small btn-blue">
+                                <i class="icon-ecommerce-receipt"></i>
+                                details
+                            </a>
+
+                            <% if(user && product.user.toString() !== user._id.toString() ) { %>
+                                <form action="/cart/<%= product._id %>" method="POST">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <button class="btn btn-small btn-green sp"><i class="icon-ecommerce-cart-plus"></i>Add</button>
+                                </form>
+                            <% } else if(!user) { %>
+                                <form action="/cart/<%= product._id %>" method="POST">
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <button class="btn btn-small btn-green sp"><i class="icon-ecommerce-cart-plus"></i>Add</button>
+                                </form>
+                            <% } %> 
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    
+        <div class="pagination-buttons">
+            <% if(hasPreviousPage) {%>
+                <a href="?page=<%=previousPage%>" class="link">prev</a>
+            <% } %>
+        
+            <% if(currentPage !== 1) {%>
+                <a href="?page=1" class="btn">1</a>
+            <% } %>
+            <% if(currentPage > 3) {%>
+            ...
+            <% } %>
+            <% if(hasPreviousPage && currentPage !== 2) {%>
+                 <a href="?page=<%=previousPage%>" class="btn">
+                     <%=previousPage%></a>
+            <% } %>
+        
+            <a href="?page=<%=currentPage%>" class="active">
+                <%=currentPage%></a>
+        
+            <% if(hasNextPage) {%>
+                <a href="?page=<%=nextPage%>" class="btn">
+                    <%=nextPage%></a>
+            <% } %>
+            <% if(currentPage < lastPage - 2) {%>
+                ...
+            <% } %>
+        
+            <% if(currentPage !== lastPage && currentPage !== lastPage - 1 ) {%>
+                <a href="?page=<%=lastPage%>" class="btn">
+                    <% if(lastPage != 0) { %>
+                        <%=lastPage%>
+                    <% } %>
+                </a>
+            <% } %>
+        
+            <% if(hasNextPage) {%>
+                <a href="?page=<%=nextPage%>" class="link">next</a>
+            <% } %>
+        </div>
+    </section>
+
+<% include ../partials/footer.ejs %>

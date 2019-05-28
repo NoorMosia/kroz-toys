@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs') %>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/nav.css">
+    <link rel="stylesheet" href="/stylesheets/auth.css">
+    <link rel="stylesheet" href="/stylesheets/create-product.css">
+
+<%- include('../partials/nav.ejs') %>
+
+    <section class="section__form">
+        <h2 class="main-heading">edit profile pic</h2>
+
+        <form action="/user" method="POST" class="form" enctype="multipart/form-data">
+            <input type="file" name="image" id="image">
+            <button class="btn btn-blue btn-large form-btn">edit</button>
+            <input type="hidden" name="userId" value="<%= user._id %>">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        </form>
+    </section>
+
+<%- include('../partials/footer.ejs') %>
